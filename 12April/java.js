@@ -147,6 +147,7 @@ do {
   console.log("Emekli oldunuz, yaşınız:" + age2);
 } while (age2 > 65);
 
+
 //   var insan =
 //   {
 //     age: fonksiyon()
