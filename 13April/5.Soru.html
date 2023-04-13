@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ! iki tane textbox bir tanede hesapla butonu olacak. biri kısa kenar uzunluğu biri uzun kenar uzunluğu girilecek bunlarla dikdörtgenin çevresi ve alanı hesaplanacak -->
+
+    <div
+      style="
+        border: 3px solid gray;
+        text-align: center;
+        background-color: darkgray;
+        display: block;
+      "
+    >
+      <label>Dörtgen Çevre Hesaplama</label>
+      <br />
+      <label for="kisaKenar"> Kısa kenar: </label>
+      <input type="text" id="kisaKenar" style="margin-top: 10px" />
+      <br />
+      <br />
+      <label for="uzunKenar"> Uzun kenar:</label>
+      <input type="text" id="uzunKenar" style="margin-top: 10px" />
+      <br />
+      <br />
+      <button onclick="hesapla()" style="background-color: cadetblue">
+        Hesapla
+      </button>
+      <br />
+      <br />
+      <label id="cevre"></label>
+      <br />
+      <br />
+      <label id="alan"></label>
+    </div>
+
+    <!-- ! bir dik üçgenin hipotenüsünü hesaplayalım -->
+
+    <div
+      style="
+        border: 3px solid gray;
+        text-align: center;
+        background-color: darkgray;
+        display: block;
+        margin-top: 40px;
+      "
+    >
+      <label>Hipotenüs Hesaplama</label>
+      <br />
+      <label for="kenar1"> 1.Kenar: </label>
+      <input type="text" id="kenar1" style="margin-top: 10px" />
+      <br />
+      <br />
+      <label for="kenar2"> 2.Kenar:</label>
+      <input type="text" id="kenar2" style="margin-top: 10px" />
+      <br />
+      <br />
+      <button onclick="hipotenus()" style="background-color: cadetblue">
+        Hesapla
+      </button>
+      <br />
+      <br />
+      <label id="hipotenus"></label>
+    </div>
+
+    <!-- ! Tarih ve Saat Yazdırma -->
+    <div
+      style="
+        border: 3px solid gray;
+        text-align: center;
+        background-color: darkgray;
+        display: block;
+        margin-top: 40px;
+      "
+    >
+      <label id="saat"></label>
+    </div>
+    <script>
+      function hesapla() {
+
+        let kisaKenar = Number(document.getElementById("kisaKenar").value);
+        let uzunKenar = Number(document.getElementById("uzunKenar").value);
+        let alan = kisaKenar * uzunKenar;
+        let cevre = 2 * (kisaKenar + uzunKenar);
+        alert("Alan: " + kisaKenar * uzunKenar);
+        alert("Çevre: " + 2 * (kisaKenar + uzunKenar));
+
+        document.getElementById("cevre").innerHTML = "Çevre: " + cevre;
+        document.getElementById("alan").innerHTML = "Alan: " + alan;
+      }
+
+      function hipotenus() {
+        let kenar1 = Number(document.getElementById("kenar1").value);
+        let kenar2 = Number(document.getElementById("kenar2").value);
+        let hipotenus = Math.sqrt(kenar1 ** 2 + kenar2 ** 2);
+        alert("Hipotenus: " + hipotenus);
+
+        document.getElementById("hipotenus").innerHTML =
+          "Hipotenüs: " + hipotenus;
+      }
+
+      function saat() {
+        var saat = new Date().toLocaleTimeString("tr-TR");
+        document.getElementById("saat").innerHTML = "Saat: " + saat;
+      }
+      setInterval(saat, 1000);
+    </script>
+  </body>
+</html>
