@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../YouTubeDesign"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "13April"
+	}
+}
